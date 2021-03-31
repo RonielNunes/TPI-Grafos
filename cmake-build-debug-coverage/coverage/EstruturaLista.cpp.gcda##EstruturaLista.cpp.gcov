@@ -1,0 +1,262 @@
+        -:    0:Source:C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/sources/EstruturaLista.cpp
+        -:    0:Graph:C:\Users\Roniel Nunes\Desktop\Sexto Periodo\CCF 331 - Teoria e Modelo de Grafos\Trabalho pratico\TPI\cmake-build-debug-coverage\CMakeFiles\TPI.dir\sources\EstruturaLista.cpp.gcno
+        -:    0:Data:C:\Users\Roniel Nunes\Desktop\Sexto Periodo\CCF 331 - Teoria e Modelo de Grafos\Trabalho pratico\TPI\cmake-build-debug-coverage\CMakeFiles\TPI.dir\sources\EstruturaLista.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:
+        -:    2:#include "../headers/EstruturaLista.hpp"
+        -:    3:
+        -:    4://Contrutor
+        1:    5:Grafo::Grafo(int Vertice){
+        1:    5-block  0
+        1:    6:    this->Vertice = Vertice; // Faz a atribuição ao numero de vertices, presentado pela variável n
+      101:    7:    Arestas = new vector<int>[Vertice]; // Cria as listas de adjacencia
+        1:    7-block  0
+        1:    7-block  1
+    $$$$$:    7-block  2
+        1:    7-block  3
+      101:    7-block  4
+      100:    7-block  5
+      101:    8:    Peso = new vector<float>[Vertice];  //Peso[Vertice][Vertice];//Criacao de uma matriz para representar os pesos
+        1:    8-block  0
+        1:    8-block  1
+    $$$$$:    8-block  2
+        1:    8-block  3
+      101:    8-block  4
+      100:    8-block  5
+        1:    9:}
+        -:   10:
+        -:   11://Metodos
+        -:   12:
+        -:   13:/*
+        -:   14:*   para colocar valores dentro do vector você deve utilizar push_back(valor)
+        -:   15:*   e para pegar um valor pode usar o operador [] ou a função at.
+        -:   16:*   vector <int> c;
+        -:   17:*   c.push_back(3);
+        -:   18:*   c.push_back(4);
+        -:   19:*   int a = c[0] // a recebe o valor 3
+        -:   20:*   int b = c.at(1) // b recebe o valor 4
+        -:   21:*/
+      419:   22:void Grafo::setAresta(int v1, int v2 ,float peso) {
+      419:   22-block  0
+      419:   23:    Arestas[v1].push_back(v2); // Faz a inserção do vertice 2 no vertice 1
+      419:   23-block  0
+      419:   24:    Arestas[v2].push_back(v1); // e faz a inserção do vertice 1 no vertice 2
+      419:   25:    Peso[v1].push_back(peso);
+      419:   26:}
+        -:   27:
+        -:   28://A função get recebe como parametro um vertice e retorna o seu
+        -:   29:// grau que é a quantidade de vertices adjacentes;
+        9:   30:int Grafo::getGrau(int v) {
+        9:   30-block  0
+        9:   31:    return Arestas[v].size();
+        9:   31-block  0
+        -:   32:}
+        -:   33:
+        1:   34:void Grafo::getVizinhos(int v, int *vizinhos){
+        1:   34-block  0
+        7:   35:    for (int i = 0; i < Arestas[v].size(); ++i){
+        1:   35-block  0
+        7:   35-block  1
+        6:   36:        vizinhos[i] = this->Arestas[v].at(i) + 1;
+        6:   36-block  0
+        -:   37:    }
+        1:   38:}
+        -:   39:
+    #####:   40:void Grafo::printGrafo(){
+    $$$$$:   40-block  0
+    #####:   41:    cout<<endl;
+    $$$$$:   41-block  0
+    #####:   42:    for (int i = 0; i < Vertice; ++i) {
+    $$$$$:   42-block  0
+    #####:   43:        cout<< i + 1 <<": ";
+    $$$$$:   43-block  0
+    #####:   44:        for (int j = 0; j < Arestas[i].size(); ++j) {
+    $$$$$:   44-block  0
+    #####:   45:            cout << " " << this->Arestas[i].at(j) + 1;
+    $$$$$:   45-block  0
+        -:   46:        }
+    #####:   47:        cout << endl;
+    $$$$$:   47-block  0
+        -:   48:    }
+    #####:   49:}
+        3:   50:int Grafo::CompsConexaGrafo(){
+        3:   50-block  0
+        3:   51:    int id = 0;
+        3:   52:    int ordem[Vertice];
+        -:   53:
+      303:   54:    for (int i = 0; i < Vertice; ++i) {
+        3:   54-block  0
+      303:   54-block  1
+      300:   54-block  2
+      300:   55:        ordem[i] = -1;
+        -:   56:    }
+      303:   57:    for (int i = 0; i < Vertice; ++i) {
+        3:   57-block  0
+      303:   57-block  1
+      300:   57-block  2
+      300:   58:        if (ordem[i] == -1){
+      300:   58-block  0
+        4:   59:            dfsRconComps(i,id++,ordem);
+        4:   59-block  0
+        4:   59-block  1
+        -:   60:        }
+        -:   61:    }
+        3:   62:    return id;
+        3:   62-block  0
+        3:   62-block  1
+        -:   63:}
+      300:   64:void Grafo::dfsRconComps(int v, int id, int *ordem){
+      300:   64-block  0
+      300:   65:    ordem[v] = id;
+        -:   66:
+     2798:   67:    for (int i = 0; i < Arestas[v].size(); ++i){
+      300:   67-block  0
+     2798:   67-block  1
+     2498:   67-block  2
+     2498:   68:        if (ordem[this->Arestas[v].at(i)] == -1){
+     2498:   68-block  0
+      296:   69:            dfsRconComps(this->Arestas[v].at(i),id,ordem);
+      296:   69-block  0
+        -:   70:        }
+        -:   71:    }
+      300:   72:}
+        -:   73:
+        1:   74:void Grafo::buscaProfundidade(int *ordem) {
+        1:   74-block  0
+        1:   75:    int cnt = 0;
+      101:   76:    for (int i = 0; i < Vertice; ++i) {
+        1:   76-block  0
+      101:   76-block  1
+      100:   76-block  2
+      100:   77:        ordem[i] = -1;
+        -:   78:    }
+      101:   79:    for (int i = 0; i < Vertice; ++i) {
+        1:   79-block  0
+      101:   79-block  1
+      100:   79-block  2
+      100:   80:        if (ordem[i] == -1){
+      100:   80-block  0
+        1:   81:            explorar(i,&cnt,ordem);
+        1:   81-block  0
+        1:   81-block  1
+        -:   82:        }
+        -:   83:    }
+        1:   84:}
+        1:   84-block  0
+      100:   85:void Grafo::explorar(int v, int *cnt, int *ordem) {
+      100:   85-block  0
+        -:   86:    int w;
+      100:   87:    ordem[v] = (*cnt)++;
+      938:   88:    for (int i = 0; i < Arestas[v].size(); ++i){
+      100:   88-block  0
+      938:   88-block  1
+      838:   88-block  2
+      838:   89:        if (ordem[this->Arestas[v].at(i)] == -1){
+      838:   89-block  0
+       99:   90:            w = this->Arestas[v].at(i);
+       99:   90-block  0
+       99:   91:            explorar(this->Arestas[v].at(i),cnt,ordem);
+        -:   92:        }
+        -:   93:    }
+      100:   94:}
+        1:   95:void Grafo::removeAresta(int v1, int v2) {
+        1:   95-block  0
+        6:   96:    for(unsigned int i=0;i<Arestas[v1].size();i++){
+        1:   96-block  0
+        6:   96-block  1
+        5:   96-block  2
+        6:   97:        if(Arestas[v1].at(i)==v2){
+        6:   97-block  0
+        1:   98:            Arestas[v1].erase(Arestas[v1].begin()+i);
+        1:   98-block  0
+    %%%%%:   98-block  1
+    %%%%%:   98-block  2
+    %%%%%:   98-block  3
+        1:   99:            break;
+        1:   99-block  0
+        -:  100:        }
+        -:  101:    }
+       17:  102:    for(unsigned int j=0;j<Arestas[v2].size();j++){
+        1:  102-block  0
+       17:  102-block  1
+       16:  102-block  2
+       17:  103:        if(Arestas[v2].at(j)==v1){
+       17:  103-block  0
+        1:  104:            Arestas[v2].erase(Arestas[v2].begin()+j);
+        1:  104-block  0
+    %%%%%:  104-block  1
+    %%%%%:  104-block  2
+        1:  105:            break;
+        1:  105-block  0
+        -:  106:        }
+        -:  107:    }
+        1:  108:}
+        1:  108-block  0
+        1:  109:bool Grafo::verificaSeArestaPonto(int ncomponentes, int arestaR1, int arestaR2) {
+        1:  109-block  0
+        -:  110:    int ncomponetesRemocao;
+        1:  111:    this->removeAresta(arestaR1,arestaR2);
+        1:  111-block  0
+        1:  112:    ncomponetesRemocao = this->CompsConexaGrafo();
+        1:  113:    if (ncomponentes == ncomponetesRemocao){
+        1:  114:        return false;
+        1:  114-block  0
+        -:  115:    }else{
+    #####:  116:        return true;
+    $$$$$:  116-block  0
+        -:  117:    }
+        -:  118:}
+        -:  119:
+        1:  120:void Grafo::removeVertice(int v) {
+        1:  120-block  0
+      101:  121:    for (int i = 0; i < Vertice; ++i) {
+        1:  121-block  0
+      101:  121-block  1
+      100:  121-block  2
+      926:  122:        for(int j=0;j<Arestas[i].size();j++){
+      100:  122-block  0
+      926:  122-block  1
+      826:  122-block  2
+      826:  123:            if(Arestas[i].at(j)==v){
+      826:  123-block  0
+        6:  124:                Arestas[i].erase(Arestas[i].begin()+j);
+        6:  124-block  0
+        6:  124-block  1
+    %%%%%:  124-block  2
+    %%%%%:  124-block  3
+    %%%%%:  124-block  4
+        -:  125:            }
+      826:  126:            if(i == v){
+      826:  126-block  0
+        1:  127:                Arestas[i].erase(Arestas[i].begin(),Arestas[i].begin()+Arestas[i].size());
+        1:  127-block  0
+        1:  127-block  1
+    %%%%%:  127-block  2
+    %%%%%:  127-block  3
+    %%%%%:  127-block  4
+    %%%%%:  127-block  5
+        -:  128:            }
+        -:  129:        }
+        -:  130:    }
+        1:  131:}
+        1:  131-block  0
+        1:  132:bool Grafo::verificaSeVerticeArticulcao(int ncomponentes, int v) {
+        1:  132-block  0
+        -:  133:    int ncomponentesRemocao;
+        1:  134:    this->removeVertice(v);
+        1:  134-block  0
+        1:  135:    ncomponentesRemocao = this->CompsConexaGrafo();
+        1:  136:    if (ncomponentes == ncomponentesRemocao){
+    #####:  137:        return false;
+    $$$$$:  137-block  0
+        -:  138:    }else{
+        1:  139:        return true;
+        1:  139-block  0
+        -:  140:    }
+        4:  141:}
+        1:  141-block  0
+        1:  141-block  1
+        1:  141-block  2
+        1:  141-block  3
+        1:  141-block  4

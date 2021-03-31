@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/headers/EstruturaLista.hpp
+iostream
+-
+vector
+-
+
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/main.cpp
+headers/EstruturaLista.hpp
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/headers/EstruturaLista.hpp
+cstring
+-
+
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/sources/EstruturaLista.cpp
+../headers/EstruturaLista.hpp
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/headers/EstruturaLista.hpp
+

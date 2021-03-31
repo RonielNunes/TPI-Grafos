@@ -1,0 +1,19 @@
+* Ordem do grafo V(G): 10
+* Tamanho do grafo E(G): 9
+* Vizinhos do vertice V = 2 : { 7  9 }
+* Grau do vertice d(x2): 2
+* Ordem de visitas em BP : 
+    Vertice 1  ordem de acesso: 1 
+    Vertice 2  ordem de acesso: 5 
+    Vertice 3  ordem de acesso: 2 
+    Vertice 4  ordem de acesso: 4 
+    Vertice 5  ordem de acesso: 10 
+    Vertice 6  ordem de acesso: 3 
+    Vertice 7  ordem de acesso: 6 
+    Vertice 8  ordem de acesso: 7 
+    Vertice 9  ordem de acesso: 8 
+    Vertice 10  ordem de acesso: 9 
+
+* Numero de componentes: 2
+* A aresta escolhida eh uma ponte
+* O vertice escolhido eh uma articulacao

@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/headers/Algoritmos.hpp
+EstruturaLista.hpp
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/headers/EstruturaLista.hpp
+EstruturaLista.hpp
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/headers/EstruturaLista.hpp
+
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/headers/EstruturaLista.hpp
+iostream
+-
+vector
+-
+
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/main.cpp
+headers/EstruturaLista.hpp
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/headers/EstruturaLista.hpp
+headers/Algoritmos.hpp
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/headers/Algoritmos.hpp
+String.h
+-
+

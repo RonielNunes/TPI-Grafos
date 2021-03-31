@@ -1,0 +1,14 @@
+* Ordem do grafo V(G): 5
+* Tamanho do grafo E(G): 6
+* Vizinhos do vertice V = 5 : { 1  2  3  4 }
+* Grau do vertice d(x5): 4
+* Ordem de visitas em BP : 
+    Vertice 1  ordem de acesso: 1 
+    Vertice 2  ordem de acesso: 2 
+    Vertice 3  ordem de acesso: 4 
+    Vertice 4  ordem de acesso: 5 
+    Vertice 5  ordem de acesso: 3 
+
+* Numero de componentes: 1
+* A aresta escolhida nao eh uma ponte
+* O vertice escolhido eh uma articulacao

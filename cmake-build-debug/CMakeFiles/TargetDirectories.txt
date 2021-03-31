@@ -1,0 +1,3 @@
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/cmake-build-debug/CMakeFiles/TPI.dir
+C:/Users/Roniel Nunes/Desktop/Sexto Periodo/CCF 331 - Teoria e Modelo de Grafos/Trabalho pratico/TPI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
